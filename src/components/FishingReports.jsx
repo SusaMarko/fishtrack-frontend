@@ -26,6 +26,11 @@ const FishingReports = () => {
           <p>{fishingReport.created_at}</p>
           <p>{fishingReport.spot}</p>
           <p>{fishingReport.water_level}</p>
+          <p>{fishingReport.weather}</p>
+          <p>{fishingReport.type_of_fishing}</p>
+          <p>{fishingReport.bait}</p>
+          <p>{fishingReport.food}</p>
+          <p>{fishingReport.the_catch}</p>
           <br />
         </div>
       ))}
