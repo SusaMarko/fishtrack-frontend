@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Placeholder from "react-bootstrap/Placeholder";
 
 const FishingReportInput = () => {
   const [createdAt, setCreatedAt] = useState("");
@@ -44,13 +45,13 @@ const FishingReportInput = () => {
         <h1>Napisi izvestaj sa pecanja</h1>
         <div className="d-flex flex-column">
           <input
-            className="from-control"
+            className="form-control"
             type="text"
             placeholder="Datum i vreme izlaska na vodu"
             onChange={(e) => setCreatedAt(e.target.value)}
           />
           <input
-            className="from-control"
+            className="form-control"
             type="text"
             placeholder="Mesto pecanja"
             onChange={(e) => setSpot(e.target.value)}
