@@ -41,7 +41,7 @@ const FishingReportInput = () => {
   return (
     <>
       <div>
-        <h1 className="text-3xl font-bold underline">
+        <h1 className="w-full text-3xl font-bold text-black">
           Napisi izvestaj sa pecanja
         </h1>
         <div>
