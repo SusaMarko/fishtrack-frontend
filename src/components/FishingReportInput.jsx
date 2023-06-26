@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Placeholder from "react-bootstrap/Placeholder";
 
 const FishingReportInput = () => {
   const [createdAt, setCreatedAt] = useState("");
@@ -41,63 +40,52 @@ const FishingReportInput = () => {
 
   return (
     <>
-      <div className="container text-center">
+      <div>
         <h1>Napisi izvestaj sa pecanja</h1>
-        <div className="d-flex flex-column">
+        <div>
           <input
-            className="form-control"
             type="text"
             placeholder="Datum i vreme izlaska na vodu"
             onChange={(e) => setCreatedAt(e.target.value)}
           />
           <input
-            className="form-control"
             type="text"
             placeholder="Mesto pecanja"
             onChange={(e) => setSpot(e.target.value)}
           />
           <input
-            className="from-control"
             type="text"
             placeholder="Nivo vode tog dana"
             onChange={(e) => setWaterLevel(e.target.value)}
           />
           <input
-            className="from-control"
             type="text"
             placeholder="Vreme (suncano, oblacno, duva vetar itd.)"
             onChange={(e) => setWeather(e.target.value)}
           />
           <input
-            className="from-control"
             type="text"
             placeholder="Vrsta pecanja (fider, plovak, dubinka itd.)"
             onChange={(e) => setTypeOfFishing(e.target.value)}
           />
           <input
-            className="from-control"
             type="text"
             placeholder="Koji mamac je koriscen"
             onChange={(e) => setBait(e.target.value)}
           />
           <input
-            className="from-control"
             type="text"
             placeholder="Koja hrana je koriscena za primamu"
             onChange={(e) => setFood(e.target.value)}
           />
           <input
-            className="from-control"
             type="text"
             placeholder="I na kraju ulov (ne uvelicavati mnogo :))"
             onChange={(e) => setTheCatch(e.target.value)}
           />
         </div>
         <br></br>
-        <button
-          className="btn btn-success"
-          onClick={(e) => handleButtonClicked(e)}
-        >
+        <button onClick={(e) => handleButtonClicked(e)}>
           Dodaj izvestaj sa pecanja u bazu
         </button>
         <br></br>

@@ -22,7 +22,7 @@ const FishingReports = () => {
   return (
     <>
       {fishingReports.map((fishingReport) => (
-        <div className="container" key={fishingReport.id}>
+        <div key={fishingReport.id}>
           <p>{fishingReport.created_at}</p>
           <p>{fishingReport.spot}</p>
           <p>{fishingReport.water_level}</p>
