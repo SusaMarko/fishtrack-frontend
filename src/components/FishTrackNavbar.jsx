@@ -12,8 +12,16 @@ const FishTrackNavbar = () => {
     <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4">
       <h1 className="w-full text-3xl font-bold text-[green]">FishTrack</h1>
       <ul className="hidden md:flex">
-        <li className="p-4">Dodaj izvestaj sa pecanja</li>
-        <li className="p-4">Pregled svih izvestaja sa pecanja</li>
+        <li>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            Dodaj izvestaj sa pecanja
+          </button>
+        </li>
+        <li>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            Pregled svih izvestaja sa pecanja
+          </button>
+        </li>
       </ul>
       <div onClick={handleNav} className="block md:hidden">
         {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
@@ -29,8 +37,16 @@ const FishTrackNavbar = () => {
           FishTrack
         </h1>
         <ul className="uppercase p-4">
-          <li className="p-4 border-b">Dodaj izvestaj sa pecanja</li>
-          <li className="p-4 border-b">Pregled svih izvestaja sa pecanja</li>
+          <li>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+              Dodaj izvestaj sa pecanja
+            </button>
+          </li>
+          <li>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+              Pregled svih izvestaja sa pecanja
+            </button>
+          </li>
         </ul>
       </div>
     </div>
