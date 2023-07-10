@@ -40,46 +40,53 @@ const FishingReportInput = () => {
 
   return (
     <>
-      <div>
-        <h1 className="w-full text-3xl font-bold text-black">
+      <div className=" pt-10 flex justify-center items-center flex-col ...">
+        <h1 className="flex justify-center items-center flex-col ... w-full text-3xl font-bold text-black">
           Napisi izvestaj sa pecanja
         </h1>
-        <div>
+        <div className="pt-10">
           <input
             type="text"
             placeholder="Datum i vreme izlaska na vodu"
             onChange={(e) => setCreatedAt(e.target.value)}
           />
+          <br></br>
           <input
             type="text"
             placeholder="Mesto pecanja"
             onChange={(e) => setSpot(e.target.value)}
           />
+          <br></br>
           <input
             type="text"
             placeholder="Nivo vode tog dana"
             onChange={(e) => setWaterLevel(e.target.value)}
           />
+          <br></br>
           <input
             type="text"
             placeholder="Vreme (suncano, oblacno, duva vetar itd.)"
             onChange={(e) => setWeather(e.target.value)}
           />
+          <br></br>
           <input
             type="text"
             placeholder="Vrsta pecanja (fider, plovak, dubinka itd.)"
             onChange={(e) => setTypeOfFishing(e.target.value)}
           />
+          <br></br>
           <input
             type="text"
             placeholder="Koji mamac je koriscen"
             onChange={(e) => setBait(e.target.value)}
           />
+          <br></br>
           <input
             type="text"
             placeholder="Koja hrana je koriscena za primamu"
             onChange={(e) => setFood(e.target.value)}
           />
+          <br></br>
           <input
             type="text"
             placeholder="I na kraju ulov (ne uvelicavati mnogo :))"
@@ -87,7 +94,10 @@ const FishingReportInput = () => {
           />
         </div>
         <br></br>
-        <button onClick={(e) => handleButtonClicked(e)}>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          onClick={(e) => handleButtonClicked(e)}
+        >
           Dodaj izvestaj sa pecanja u bazu
         </button>
         <br></br>

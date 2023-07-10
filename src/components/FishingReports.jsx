@@ -22,7 +22,10 @@ const FishingReports = () => {
   return (
     <>
       {fishingReports.map((fishingReport) => (
-        <div key={fishingReport.id}>
+        <div
+          className="pt-10 flex justify-center items-center flex-col ..."
+          key={fishingReport.id}
+        >
           <p>{fishingReport.created_at}</p>
           <p>{fishingReport.spot}</p>
           <p>{fishingReport.water_level}</p>
