@@ -23,12 +23,12 @@ const FishTrackNavbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="space-y-4 ... menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
               <a
                 href="/FishingReportInput"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
               >
                 Dodaj izvestaj sa pecanja
               </a>
@@ -36,21 +36,21 @@ const FishTrackNavbar = () => {
             <li>
               <a
                 href="/FishingReports"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
               >
                 Pregled svih izvestaja sa pecanja
               </a>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-4xl">FishTrack</a>
+        <a className="btn btn-ghost normal-case text-6xl">FishTrack</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="space-x-4 ... menu menu-horizontal px-1">
           <li>
             <a
               href="/FishingReportInput"
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
             >
               Dodaj izvestaj sa pecanja
             </a>
@@ -59,7 +59,7 @@ const FishTrackNavbar = () => {
           <li>
             <a
               href="/FishingReports"
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
             >
               Pregled svih izvestaja sa pecanja
             </a>
@@ -89,7 +89,7 @@ export default FishTrackNavbar;
 //         <li>
 //           <a
 //             href="/FishingReportInput"
-//             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+//             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 //           >
 //             Dodaj izvestaj sa pecanja
 //           </a>
@@ -97,7 +97,7 @@ export default FishTrackNavbar;
 //         <li>
 //           <a
 //             href="/FishingReports"
-//             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+//             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 //           >
 //             Pregled svih izvestaja sa pecanja
 //           </a>
@@ -120,7 +120,7 @@ export default FishTrackNavbar;
 //           <li>
 //             <a
 //               href="/FishingReportInput"
-//               class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+//               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 //             >
 //               Dodaj izvestaj sa pecanja
 //             </a>
@@ -128,7 +128,7 @@ export default FishTrackNavbar;
 //           <li>
 //             <a
 //               href="/FishingReports"
-//               class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+//               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 //             >
 //               Pregled svih izvestaja sa pecanja
 //             </a>

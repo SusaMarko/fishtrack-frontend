@@ -40,62 +40,98 @@ const FishingReportInput = () => {
 
   return (
     <>
-      <div className=" pt-10 flex justify-center items-center flex-col ...">
-        <h1 className="flex justify-center items-center flex-col ... w-full text-3xl font-bold text-black">
+      <div className="pt-10 flex justify-center items-center flex-col">
+        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black">
           Napisi izvestaj sa pecanja
         </h1>
-        <div className="pt-10">
+        <div className="pt-10 flex flex-wrap justify-center items-center flex-col">
+          <span className="mr-2">Datum i vreme izlaska na vodu:</span>
           <input
             type="text"
-            placeholder="Datum i vreme izlaska na vodu"
+            placeholder=""
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
             onChange={(e) => setCreatedAt(e.target.value)}
           />
-          <br></br>
+
+          <br />
+
+          <span className="mr-2">Mesto pecanja:</span>
           <input
             type="text"
-            placeholder="Mesto pecanja"
+            placeholder=""
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
             onChange={(e) => setSpot(e.target.value)}
           />
-          <br></br>
+
+          <br />
+
+          <span className="mr-2">Nivo vode tog dana:</span>
           <input
             type="text"
-            placeholder="Nivo vode tog dana"
+            placeholder=""
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
             onChange={(e) => setWaterLevel(e.target.value)}
           />
-          <br></br>
+
+          <br />
+
+          <span className="mr-2">
+            Vreme (suncano, oblacno, duva vetar itd.):
+          </span>
           <input
             type="text"
-            placeholder="Vreme (suncano, oblacno, duva vetar itd.)"
+            placeholder=""
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
             onChange={(e) => setWeather(e.target.value)}
           />
-          <br></br>
+
+          <br />
+
+          <span className="mr-2">
+            Vrsta pecanja (fider, plovak, dubinka itd.):
+          </span>
           <input
             type="text"
-            placeholder="Vrsta pecanja (fider, plovak, dubinka itd.)"
+            placeholder=""
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
             onChange={(e) => setTypeOfFishing(e.target.value)}
           />
-          <br></br>
+
+          <br />
+
+          <span className="mr-2">Koji mamac je koriscen:</span>
           <input
             type="text"
-            placeholder="Koji mamac je koriscen"
+            placeholder=""
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
             onChange={(e) => setBait(e.target.value)}
           />
-          <br></br>
+
+          <br />
+
+          <span className="mr-2">Koja hrana je koriscena za primamu:</span>
           <input
             type="text"
-            placeholder="Koja hrana je koriscena za primamu"
+            placeholder=""
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
             onChange={(e) => setFood(e.target.value)}
           />
-          <br></br>
+
+          <br />
+
+          <span className="mr-2">
+            I na kraju ulov (ne uvelicavati mnogo :):
+          </span>
           <input
             type="text"
-            placeholder="I na kraju ulov (ne uvelicavati mnogo :))"
+            placeholder=""
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
             onChange={(e) => setTheCatch(e.target.value)}
           />
         </div>
         <br></br>
         <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
           onClick={(e) => handleButtonClicked(e)}
         >
           Dodaj izvestaj sa pecanja u bazu
