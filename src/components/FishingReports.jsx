@@ -21,20 +21,43 @@ const FishingReports = () => {
 
   return (
     <>
+      <div>
+        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black underline">
+          Pregled svih izveštaja
+        </h1>
+      </div>
       {fishingReports.map((fishingReport) => (
         <div
-          className="pt-10 flex justify-center items-center flex-col ..."
+          className="flex justify-center items-center relative"
           key={fishingReport.id}
         >
-          <p>{fishingReport.created_at}</p>
-          <p>{fishingReport.spot}</p>
-          <p>{fishingReport.water_level}</p>
-          <p>{fishingReport.weather}</p>
-          <p>{fishingReport.type_of_fishing}</p>
-          <p>{fishingReport.bait}</p>
-          <p>{fishingReport.food}</p>
-          <p>{fishingReport.the_catch}</p>
-          <br />
+          <ul className="pb-8 rounded-lg p-4 space-y-4 text-center">
+            <li>
+              <strong>Datum:</strong> {fishingReport.created_at}
+            </li>
+            <li>
+              <strong>Mesto pecanja:</strong> {fishingReport.spot}
+            </li>
+            <li>
+              <strong>Nivo vode:</strong> {fishingReport.water_level}
+            </li>
+            <li>
+              <strong>Vreme:</strong> {fishingReport.weather}
+            </li>
+            <li>
+              <strong>Vrsta pecanja:</strong> {fishingReport.type_of_fishing}
+            </li>
+            <li>
+              <strong>Mamac:</strong> {fishingReport.bait}
+            </li>
+            <li>
+              <strong>Primama:</strong> {fishingReport.food}
+            </li>
+            <li>
+              <strong>Ulov:</strong> {fishingReport.the_catch}
+            </li>
+          </ul>
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-black"></div>
         </div>
       ))}
     </>
