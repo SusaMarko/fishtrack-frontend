@@ -24,7 +24,7 @@ const FishingReportInput = () => {
         theCatch,
       };
       const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/fishing-reports`,
+        "http://localhost:5000/reports/fishing-report-input",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

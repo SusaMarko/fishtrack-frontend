@@ -27,7 +27,7 @@ const FishTrackNavbar = () => {
           >
             <li>
               <a
-                href="/FishingReportInput"
+                href="/reports/FishingReportInput"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
               >
                 Dodaj izvestaj sa pecanja
@@ -35,7 +35,7 @@ const FishTrackNavbar = () => {
             </li>
             <li>
               <a
-                href="/FishingReports"
+                href="/reports/FishingReports"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
               >
                 Pregled svih izvestaja sa pecanja
@@ -49,7 +49,7 @@ const FishTrackNavbar = () => {
         <ul className="space-x-4 ... menu menu-horizontal px-1">
           <li>
             <a
-              href="/FishingReportInput"
+              href="/reports/FishingReportInput"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
             >
               Dodaj izvestaj sa pecanja
@@ -58,7 +58,7 @@ const FishTrackNavbar = () => {
 
           <li>
             <a
-              href="/FishingReports"
+              href="/reports/FishingReports"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
             >
               Pregled svih izvestaja sa pecanja

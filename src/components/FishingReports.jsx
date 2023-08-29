@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import FishTrackNavbar from "./FishTrackNavbar";
 
 const FishingReports = () => {
   const [fishingReports, setFishingReports] = useState([]);
@@ -9,9 +10,7 @@ const FishingReports = () => {
 
   const getFishingReports = async () => {
     try {
-      const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/fishing-reports`
-      );
+      const res = await fetch("http://localhost:5000/reports/fishing-reports");
       const data = await res.json();
       setFishingReports(data);
     } catch (err) {
@@ -21,6 +20,7 @@ const FishingReports = () => {
 
   return (
     <>
+      <FishTrackNavbar />
       <div>
         <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black underline">
           Pregled svih izveštaja
