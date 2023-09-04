@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import FishTrackNavbar from "./FishTrackNavbar";
 
 const FishingReports = () => {
   const [fishingReports, setFishingReports] = useState([]);
@@ -20,7 +19,6 @@ const FishingReports = () => {
 
   return (
     <>
-      <FishTrackNavbar />
       <div>
         <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black underline">
           Pregled svih izveštaja

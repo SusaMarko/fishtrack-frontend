@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import FishTrackNavbar from "./FishTrackNavbar";
 
-const FishingReportInput = () => {
+const FishingReportInput = (props) => {
   const [createdAt, setCreatedAt] = useState("");
   const [spot, setSpot] = useState("");
   const [waterLevel, setWaterLevel] = useState(0.0);
@@ -23,14 +24,12 @@ const FishingReportInput = () => {
         food,
         theCatch,
       };
-      const res = await fetch(
-        "http://localhost:5000/reports/fishing-report-input",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(reqBody),
-        }
-      );
+
+      await fetch("http://localhost:5000/reports/fishing-report-input", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(reqBody),
+      });
 
       window.location = "/";
     } catch (err) {
@@ -40,6 +39,7 @@ const FishingReportInput = () => {
 
   return (
     <>
+      <FishTrackNavbar setAuth={props.setAuth} />
       <div className="pt-10 flex justify-center items-center flex-col">
         <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black">
           Napisi izvestaj sa pecanja
@@ -99,7 +99,7 @@ const FishingReportInput = () => {
 
           <br />
 
-          <span className="mr-2">Koji mamac je koriscen:</span>
+          <span className="mr-2">Mamac koji je koriscen:</span>
           <input
             type="text"
             placeholder=""
@@ -109,7 +109,7 @@ const FishingReportInput = () => {
 
           <br />
 
-          <span className="mr-2">Koja hrana je koriscena za primamu:</span>
+          <span className="mr-2">Hrana koja je koriscena za primamu:</span>
           <input
             type="text"
             placeholder=""
@@ -119,9 +119,7 @@ const FishingReportInput = () => {
 
           <br />
 
-          <span className="mr-2">
-            I na kraju ulov (ne uvelicavati mnogo :):
-          </span>
+          <span className="mr-2">ulov:</span>
           <input
             type="text"
             placeholder=""
@@ -134,7 +132,7 @@ const FishingReportInput = () => {
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
           onClick={(e) => handleButtonClicked(e)}
         >
-          Dodaj izvestaj sa pecanja u bazu
+          Kreiraj izvestaj
         </button>
         <br></br>
       </div>

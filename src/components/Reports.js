@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import EditFishingReport from "./EditFishingReport";
+import FishTrackNavbar from "./FishTrackNavbar";
+import jwt_decode from "jwt-decode";
 
-const Reports = () => {
+const Reports = (props) => {
   const [fishingReports, setFishingReports] = useState([]);
   const [term, setTerm] = useState("");
 
@@ -59,6 +61,7 @@ const Reports = () => {
 
   return (
     <>
+      <FishTrackNavbar setAuth={props.setAuth} />
       <div className="container text-center">
         <form className="d-flex" onSubmit={onSubmitForm}>
           <input
@@ -82,7 +85,6 @@ const Reports = () => {
               <th>Mamac</th>
               <th>Primama</th>
               <th>Ulov</th>
-              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -96,17 +98,22 @@ const Reports = () => {
                 <td>{fishingReport.bait}</td>
                 <td>{fishingReport.food}</td>
                 <td>{fishingReport.the_catch}</td>
-                <td>
-                  <EditFishingReport fishingReport={fishingReport} />
-                </td>
-                <td>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => deleteFishingReport(fishingReport.id)}
-                  >
-                    Delete
-                  </button>
-                </td>
+                {jwt_decode(localStorage.token).user ===
+                fishingReport.user_id ? (
+                  <>
+                    <td>
+                      <EditFishingReport fishingReport={fishingReport} />
+                    </td>
+                    <td>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => deleteFishingReport(fishingReport.id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </>
+                ) : null}
               </tr>
             ))}
           </tbody>

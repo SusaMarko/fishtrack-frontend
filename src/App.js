@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import FishingReportInput from "./components/FishingReportInput";
-import FishTrackNavbar from "./components/FishTrackNavbar";
 import Reports from "./components/Reports";
 
 import "./App.css";
@@ -48,20 +47,40 @@ function App() {
             <Route
               path="/"
               element={
-                !isAuthenticated ? (
-                  <Login setAuth={setAuth} />
-                ) : (
+                isAuthenticated ? (
                   <Navigate to="/reports" />
+                ) : (
+                  <Login setAuth={setAuth} />
                 )
               }
             />
             <Route
-              path="/login"
+              path="/login-input"
               element={
-                !isAuthenticated ? (
-                  <Login setAuth={setAuth} />
+                isAuthenticated ? (
+                  <Navigate to="/input" />
                 ) : (
+                  <Login setAuth={setAuth} />
+                )
+              }
+            />
+            <Route
+              path="/login-reports"
+              element={
+                isAuthenticated ? (
                   <Navigate to="/reports" />
+                ) : (
+                  <Login setAuth={setAuth} />
+                )
+              }
+            />
+            <Route
+              path="/input"
+              element={
+                isAuthenticated ? (
+                  <FishingReportInput setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login-input" />
                 )
               }
             />
@@ -71,7 +90,7 @@ function App() {
                 isAuthenticated ? (
                   <Reports setAuth={setAuth} />
                 ) : (
-                  <Navigate to="/login" />
+                  <Navigate to="/login-reports" />
                 )
               }
             />
@@ -83,24 +102,3 @@ function App() {
 }
 
 export default App;
-
-// import "./App.css";
-// import React from "react";
-// import { Route, Routes } from "react-router-dom";
-// import FishingReportInput from "./components/FishingReportInput";
-// import FishingReports from "./components/FishingReports";
-// import FishTrackNavbar from "./components/FishTrackNavbar";
-
-// function App() {
-//   return (
-//     <>
-//       <FishTrackNavbar />
-//       <Routes>
-//         <Route path="/FishingReportInput" element={<FishingReportInput />} />
-//         <Route path="/FishingReports" element={<FishingReports />} />
-//       </Routes>
-//     </>
-//   );
-// }
-
-// export default App;
