@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import FishTrackNavbar from "./FishTrackNavbar";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const FishingReportInput = (props) => {
   const [createdAt, setCreatedAt] = useState("");
@@ -25,7 +27,7 @@ const FishingReportInput = (props) => {
         theCatch,
       };
 
-      await fetch("http://localhost:5000/reports/fishing-report-input", {
+      await fetch("http://localhost:5000/reports/fishing-reports", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(reqBody),
@@ -46,12 +48,21 @@ const FishingReportInput = (props) => {
         </h1>
         <div className="pt-10 flex flex-wrap justify-center items-center flex-col">
           <span className="mr-2">Datum i vreme izlaska na vodu:</span>
-          <input
+          <DatePicker
+            placeholder=""
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            selected={createdAt} // Use 'createdAt' as the selected date
+            onChange={(date) => setCreatedAt(date)}
+            showTimeSelect
+            // dateFormat="dd/MM/yyyy HH:mm" // 2023-06-11 11:15:32
+            dateFormat="yyyy-MM-dd HH:mm"
+          />
+          {/* <input
             type="text"
             placeholder=""
             className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
             onChange={(e) => setCreatedAt(e.target.value)}
-          />
+          /> */}
 
           <br />
 
