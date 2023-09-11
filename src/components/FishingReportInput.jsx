@@ -16,6 +16,11 @@ const FishingReportInput = (props) => {
   const handleButtonClicked = async (e) => {
     e.preventDefault();
     try {
+      const myHeaders = new Headers();
+
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append("token", localStorage.token);
+
       const reqBody = {
         createdAt,
         spot,
@@ -29,11 +34,11 @@ const FishingReportInput = (props) => {
 
       await fetch("http://localhost:5000/reports/fishing-reports", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: myHeaders,
         body: JSON.stringify(reqBody),
       });
 
-      window.location = "/";
+      window.location = "/reports";
     } catch (err) {
       console.error(err.message);
     }
