@@ -62,17 +62,19 @@ const Reports = (props) => {
   return (
     <>
       <FishTrackNavbar setAuth={props.setAuth} />
+      <br></br>
+      <br></br>
       <div className="container text-center">
         <form className="d-flex" onSubmit={onSubmitForm}>
           <input
             type="text"
             name="name"
-            placeholder="Enter fishing report ..."
+            placeholder="Unesi za pretragu ..."
             className="form-control"
             value={term}
             onChange={(e) => setTermAndFetchFishingReports(e)}
           ></input>
-          <button className="btn btn-success">Search</button>
+          <button className="btn btn-success">Pretraga</button>
         </form>
         <table className="table mt-5">
           <thead>
@@ -109,7 +111,7 @@ const Reports = (props) => {
                         className="btn btn-danger"
                         onClick={() => deleteFishingReport(fishingReport.id)}
                       >
-                        Delete
+                        Obrisi
                       </button>
                     </td>
                   </>

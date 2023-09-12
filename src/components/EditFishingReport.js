@@ -14,6 +14,11 @@ const EditFishingReport = ({ fishingReport }) => {
 
   const editFishingReport = async (id) => {
     try {
+      const myHeaders = new Headers();
+
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append("token", localStorage.token);
+
       const body = {
         createdAt,
         spot,
@@ -24,12 +29,9 @@ const EditFishingReport = ({ fishingReport }) => {
         food,
         theCatch,
       };
-      await fetch(`http://localhost:5000/reports/${id}`, {
+      await fetch(`http://localhost:5000/reports/fishing-reports/${id}`, {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          token: localStorage.token,
-        },
+        headers: myHeaders,
         body: JSON.stringify(body),
       });
       window.location = "/reports";
@@ -57,7 +59,7 @@ const EditFishingReport = ({ fishingReport }) => {
         data-toggle="modal"
         data-target={`#id${fishingReport.id}`}
       >
-        Edit
+        Izmeni
       </button>
 
       <div
@@ -164,7 +166,7 @@ const EditFishingReport = ({ fishingReport }) => {
                 data-dismiss="modal"
                 onClick={() => editFishingReport(fishingReport.id)}
               >
-                Edit
+                Promeni
               </button>
 
               <button
@@ -173,7 +175,7 @@ const EditFishingReport = ({ fishingReport }) => {
                 data-dismiss="modal"
                 onClick={() => handleModalOperation()}
               >
-                Close
+                Odjava
               </button>
             </div>
           </div>

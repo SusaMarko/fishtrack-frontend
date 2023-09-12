@@ -35,12 +35,12 @@ const Login = ({ setAuth }) => {
 
   return (
     <>
-      <h1 className="text-center my-5">Login</h1>
+      <h1 className="text-center my-5">Prijavi se</h1>
       <form onSubmit={onSubmitForm}>
         <input
           type="name"
           name="name"
-          placeholder="name"
+          placeholder="Ime"
           className="form-control my-3"
           value={name}
           onChange={(e) => onChange(e)}
@@ -48,12 +48,12 @@ const Login = ({ setAuth }) => {
         <input
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Lozinka"
           className="form-control my-3"
           value={password}
           onChange={(e) => onChange(e)}
         />
-        <button className="btn btn-success btn-block">Submit</button>
+        <button className="btn btn-success btn-block">Potvrda</button>
       </form>
     </>
   );
