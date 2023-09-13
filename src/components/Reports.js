@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import EditFishingReport from "./EditFishingReport";
 import FishTrackNavbar from "./FishTrackNavbar";
 import jwt_decode from "jwt-decode";
+import "./Reports.css";
 
 const Reports = (props) => {
   const [fishingReports, setFishingReports] = useState([]);
@@ -76,7 +77,67 @@ const Reports = (props) => {
           ></input>
           <button className="btn btn-success">Pretraga</button>
         </form>
-        <table className="table mt-5">
+        <br></br>
+        <ul className="responsive-list">
+          {fishingReports.map((fishingReport) => (
+            <li className="fishing-report" key={fishingReport.id}>
+              <div className="report-header">
+                <span className="report-label">Datum:</span>
+                <span className="report-value">{fishingReport.created_at}</span>
+              </div>
+              <div className="report-item">
+                <span className="report-label">Mesto pecanja:</span>
+                <span className="report-value">{fishingReport.spot}</span>
+              </div>
+              <div className="report-item">
+                <span className="report-label">Nivo vode:</span>
+                <span className="report-value">
+                  {fishingReport.water_level}
+                </span>
+              </div>
+              <div className="report-item">
+                <span className="report-label">Vreme:</span>
+                <span className="report-value">{fishingReport.weather}</span>
+              </div>
+              <div className="report-item">
+                <span className="report-label">Vrsta pecanja:</span>
+                <span className="report-value">
+                  {fishingReport.type_of_fishing}
+                </span>
+              </div>
+              <div className="report-item">
+                <span className="report-label">Mamac:</span>
+                <span className="report-value">{fishingReport.bait}</span>
+              </div>
+              <div className="report-item">
+                <span className="report-label">Primama:</span>
+                <span className="report-value">{fishingReport.food}</span>
+              </div>
+              <div className="report-item">
+                <span className="report-label">Ulov:</span>
+                <span className="report-value">{fishingReport.the_catch}</span>
+              </div>
+              {jwt_decode(localStorage.token).user ===
+                fishingReport.user_id && (
+                <div className="report-actions">
+                  <div className="report-action">
+                    <EditFishingReport fishingReport={fishingReport} />
+                  </div>
+                  <div className="report-action">
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => deleteFishingReport(fishingReport.id)}
+                    >
+                      Obrisi
+                    </button>
+                  </div>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        {/* <table className="table mt-5">
           <thead>
             <tr>
               <th>Datum</th>
@@ -119,7 +180,7 @@ const Reports = (props) => {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> */}
       </div>
     </>
   );

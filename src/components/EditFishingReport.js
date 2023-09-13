@@ -166,7 +166,7 @@ const EditFishingReport = ({ fishingReport }) => {
                 data-dismiss="modal"
                 onClick={() => editFishingReport(fishingReport.id)}
               >
-                Promeni
+                Izmeni
               </button>
 
               <button
