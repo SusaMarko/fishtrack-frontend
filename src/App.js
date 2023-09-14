@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
 import FishingReportInput from "./components/FishingReportInput";
 import Reports from "./components/Reports";
-
-import "./App.css";
-
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-
 import Login from "./components/Login";
 
 function App() {
@@ -37,12 +33,12 @@ function App() {
 
   useEffect(() => {
     isAuth();
-  });
+  }, []);
 
   return (
-    <>
+    <div className="bg-gray-100 min-h-screen">
       <Router>
-        <div className="container">
+        <div className="container mx-auto p-4">
           <Routes>
             <Route
               path="/"
@@ -97,7 +93,7 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </>
+    </div>
   );
 }
 

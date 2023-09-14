@@ -56,18 +56,11 @@ const FishingReportInput = (props) => {
           <DatePicker
             placeholder=""
             className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
-            selected={createdAt} // Use 'createdAt' as the selected date
+            selected={createdAt}
             onChange={(date) => setCreatedAt(date)}
             showTimeSelect
-            // dateFormat="dd/MM/yyyy HH:mm" // 2023-06-11 11:15:32
             dateFormat="yyyy-MM-dd HH:mm"
           />
-          {/* <input
-            type="text"
-            placeholder=""
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
-            onChange={(e) => setCreatedAt(e.target.value)}
-          /> */}
 
           <br />
 

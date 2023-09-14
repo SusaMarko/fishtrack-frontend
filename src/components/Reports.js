@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import EditFishingReport from "./EditFishingReport";
 import FishTrackNavbar from "./FishTrackNavbar";
 import jwt_decode from "jwt-decode";
-import "./Reports.css";
 
 const Reports = (props) => {
   const [fishingReports, setFishingReports] = useState([]);
@@ -78,109 +77,65 @@ const Reports = (props) => {
           <button className="btn btn-success">Pretraga</button>
         </form>
         <br></br>
-        <ul className="responsive-list">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {fishingReports.map((fishingReport) => (
-            <li className="fishing-report" key={fishingReport.id}>
-              <div className="report-header">
-                <span className="report-label">Datum:</span>
-                <span className="report-value">{fishingReport.created_at}</span>
+            <li
+              className="border p-4 rounded-md shadow-md hover:shadow-lg transition duration-300"
+              key={fishingReport.id}
+            >
+              <div className="text-gray-700">
+                <span className="font-bold">Datum:</span>
+                <span className="ml-2">{fishingReport.created_at}</span>
               </div>
-              <div className="report-item">
-                <span className="report-label">Mesto pecanja:</span>
-                <span className="report-value">{fishingReport.spot}</span>
+              <div className="text-gray-700 mt-2">
+                <span className="font-bold">Mesto pecanja:</span>
+                <span className="ml-2">{fishingReport.spot}</span>
               </div>
-              <div className="report-item">
-                <span className="report-label">Nivo vode:</span>
-                <span className="report-value">
-                  {fishingReport.water_level}
-                </span>
+              <div className="text-gray-700 mt-2">
+                <span className="font-bold">Nivo vode:</span>
+                <span className="ml-2">{fishingReport.water_level}</span>
               </div>
-              <div className="report-item">
-                <span className="report-label">Vreme:</span>
-                <span className="report-value">{fishingReport.weather}</span>
+              <div className="text-gray-700 mt-2">
+                <span className="font-bold">Vreme:</span>
+                <span className="ml-2">{fishingReport.weather}</span>
               </div>
-              <div className="report-item">
-                <span className="report-label">Vrsta pecanja:</span>
-                <span className="report-value">
-                  {fishingReport.type_of_fishing}
-                </span>
+              <div className="text-gray-700 mt-2">
+                <span className="font-bold">Vrsta pecanja:</span>
+                <span className="ml-2">{fishingReport.type_of_fishing}</span>
               </div>
-              <div className="report-item">
-                <span className="report-label">Mamac:</span>
-                <span className="report-value">{fishingReport.bait}</span>
+              <div className="text-gray-700 mt-2">
+                <span className="font-bold">Mamac:</span>
+                <span className="ml-2">{fishingReport.bait}</span>
               </div>
-              <div className="report-item">
-                <span className="report-label">Primama:</span>
-                <span className="report-value">{fishingReport.food}</span>
+              <div className="text-gray-700 mt-2">
+                <span className="font-bold">Primama:</span>
+                <span className="ml-2">{fishingReport.food}</span>
               </div>
-              <div className="report-item">
-                <span className="report-label">Ulov:</span>
-                <span className="report-value">{fishingReport.the_catch}</span>
+              <div className="text-gray-700 mt-2">
+                <span className="font-bold">Ulov:</span>
+                <span className="ml-2">{fishingReport.the_catch}</span>
               </div>
               {jwt_decode(localStorage.token).user ===
                 fishingReport.user_id && (
-                <div className="report-actions">
-                  <div className="report-action">
-                    <EditFishingReport fishingReport={fishingReport} />
-                  </div>
-                  <div className="report-action">
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => deleteFishingReport(fishingReport.id)}
-                    >
-                      Obrisi
-                    </button>
+                <div className="mt-4">
+                  <div className="flex space-x-4">
+                    <div>
+                      <EditFishingReport fishingReport={fishingReport} />
+                    </div>
+                    <div>
+                      <button
+                        className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
+                        onClick={() => deleteFishingReport(fishingReport.id)}
+                      >
+                        Obrisi
+                      </button>
+                    </div>
                   </div>
                 </div>
               )}
             </li>
           ))}
         </ul>
-
-        {/* <table className="table mt-5">
-          <thead>
-            <tr>
-              <th>Datum</th>
-              <th>Mesto pecanja</th>
-              <th>Nivo vode</th>
-              <th>Vreme</th>
-              <th>Vrsta pecanja</th>
-              <th>Mamac</th>
-              <th>Primama</th>
-              <th>Ulov</th>
-            </tr>
-          </thead>
-          <tbody>
-            {fishingReports.map((fishingReport) => (
-              <tr key={fishingReport.id}>
-                <td>{fishingReport.created_at}</td>
-                <td>{fishingReport.spot}</td>
-                <td>{fishingReport.water_level}</td>
-                <td>{fishingReport.weather}</td>
-                <td>{fishingReport.type_of_fishing}</td>
-                <td>{fishingReport.bait}</td>
-                <td>{fishingReport.food}</td>
-                <td>{fishingReport.the_catch}</td>
-                {jwt_decode(localStorage.token).user ===
-                fishingReport.user_id ? (
-                  <>
-                    <td>
-                      <EditFishingReport fishingReport={fishingReport} />
-                    </td>
-                    <td>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => deleteFishingReport(fishingReport.id)}
-                      >
-                        Obrisi
-                      </button>
-                    </td>
-                  </>
-                ) : null}
-              </tr>
-            ))}
-          </tbody>
-        </table> */}
       </div>
     </>
   );
