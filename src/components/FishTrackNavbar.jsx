@@ -58,7 +58,10 @@ const FishTrackNavbar = (props) => {
             </li>
           </ul>
         </div>
-        <a href="/" className="btn btn-ghost normal-case text-6xl">
+        <a
+          href="/"
+          className="bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-lg text-4xl no-underline"
+        >
           FishTrack
         </a>
       </div>

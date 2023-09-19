@@ -124,7 +124,7 @@ const Reports = (props) => {
                     </div>
                     <div>
                       <button
-                        className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
+                        className="btn bg-red-500 hover:bg-red-400 text-white"
                         onClick={() => deleteFishingReport(fishingReport.id)}
                       >
                         Obrisi
