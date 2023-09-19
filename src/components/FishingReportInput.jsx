@@ -53,8 +53,10 @@ const FishingReportInput = (props) => {
         </h1>
         <div className="pt-10 flex flex-wrap justify-center items-center flex-col">
           <span className="mr-2">Datum i vreme izlaska na vodu:</span>
+
           <DatePicker
             placeholder=""
+            wrapperClassName="w-full"
             className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
             selected={createdAt}
             onChange={(date) => setCreatedAt(date)}
@@ -143,7 +145,6 @@ const FishingReportInput = (props) => {
         >
           Napravi izvestaj
         </button>
-        <br></br>
       </div>
     </>
   );

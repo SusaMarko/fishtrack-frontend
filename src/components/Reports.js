@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import EditFishingReport from "./EditFishingReport";
 import FishTrackNavbar from "./FishTrackNavbar";
 import jwt_decode from "jwt-decode";
+import { useNavigate } from "react-router-dom";
 
 const Reports = (props) => {
   const [fishingReports, setFishingReports] = useState([]);
   const [term, setTerm] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getFishingReports();
@@ -59,6 +61,15 @@ const Reports = (props) => {
     }
   };
 
+  const dateToTime = (date) =>
+    date.toLocaleString("en-GB", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    });
+
   return (
     <>
       <FishTrackNavbar setAuth={props.setAuth} />
@@ -85,7 +96,9 @@ const Reports = (props) => {
             >
               <div className="text-gray-700">
                 <span className="font-bold">Datum:</span>
-                <span className="ml-2">{fishingReport.created_at}</span>
+                <span className="ml-2">
+                  {dateToTime(new Date(fishingReport.created_at))}
+                </span>
               </div>
               <div className="text-gray-700 mt-2">
                 <span className="font-bold">Mesto pecanja:</span>
@@ -119,17 +132,26 @@ const Reports = (props) => {
                 fishingReport.user_id && (
                 <div className="mt-4">
                   <div className="flex space-x-4">
-                    <div>
-                      <EditFishingReport fishingReport={fishingReport} />
-                    </div>
-                    <div>
-                      <button
-                        className="btn bg-red-500 hover:bg-red-400 text-white"
-                        onClick={() => deleteFishingReport(fishingReport.id)}
-                      >
-                        Obrisi
-                      </button>
-                    </div>
+                    <button
+                      className="btn bg-yellow-500 hover:bg-yellow-400 text-white"
+                      onClick={() => {
+                        navigate("/edit", {
+                          state: {
+                            // setAuth: props.setAuth,
+                            fishingReport: fishingReport,
+                          },
+                        });
+                      }}
+                    >
+                      Izmeni
+                    </button>
+
+                    <button
+                      className="btn bg-red-500 hover:bg-red-400 text-white"
+                      onClick={() => deleteFishingReport(fishingReport.id)}
+                    >
+                      Obrisi
+                    </button>
                   </div>
                 </div>
               )}

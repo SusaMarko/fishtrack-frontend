@@ -8,6 +8,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Login from "./components/Login";
+import EditFishingReport from "./components/EditFishingReport";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -71,6 +72,16 @@ function App() {
               }
             />
             <Route
+              path="/login-edit"
+              element={
+                isAuthenticated ? (
+                  <Navigate to="/edit" />
+                ) : (
+                  <Login setAuth={setAuth} />
+                )
+              }
+            />
+            <Route
               path="/input"
               element={
                 isAuthenticated ? (
@@ -87,6 +98,16 @@ function App() {
                   <Reports setAuth={setAuth} />
                 ) : (
                   <Navigate to="/login-reports" />
+                )
+              }
+            />
+            <Route
+              path="/edit"
+              element={
+                isAuthenticated ? (
+                  <EditFishingReport setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login-edit" />
                 )
               }
             />

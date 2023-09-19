@@ -1,16 +1,26 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import DatePicker from "react-datepicker";
 
-const EditFishingReport = ({ fishingReport }) => {
-  const [createdAt, setCreatedAt] = useState(fishingReport.createdAt);
-  const [spot, setSpot] = useState(fishingReport.spot);
-  const [waterLevel, setWaterLevel] = useState(fishingReport.waterLevel);
-  const [weather, setWeather] = useState(fishingReport.weather);
-  const [typeOfFishing, setTypeOfFishing] = useState(
-    fishingReport.typeOfFishing
+const EditFishingReport = () => {
+  const location = useLocation();
+
+  const [createdAt, setCreatedAt] = useState(
+    location.state.fishingReport.createdAt
   );
-  const [bait, setBait] = useState(fishingReport.bait);
-  const [food, setFood] = useState(fishingReport.food);
-  const [theCatch, setTheCatch] = useState(fishingReport.theCatch);
+  const [spot, setSpot] = useState(location.state.fishingReport.spot);
+  const [waterLevel, setWaterLevel] = useState(
+    location.state.fishingReport.water_level
+  );
+  const [weather, setWeather] = useState(location.state.fishingReport.weather);
+  const [typeOfFishing, setTypeOfFishing] = useState(
+    location.state.fishingReport.type_of_fishing
+  );
+  const [bait, setBait] = useState(location.state.fishingReport.bait);
+  const [food, setFood] = useState(location.state.fishingReport.food);
+  const [theCatch, setTheCatch] = useState(
+    location.state.fishingReport.the_catch
+  );
 
   const editFishingReport = async (id) => {
     try {
@@ -29,6 +39,7 @@ const EditFishingReport = ({ fishingReport }) => {
         food,
         theCatch,
       };
+
       await fetch(`http://localhost:5000/reports/fishing-reports/${id}`, {
         method: "PUT",
         headers: myHeaders,
@@ -40,146 +51,106 @@ const EditFishingReport = ({ fishingReport }) => {
     }
   };
 
-  const handleModalOperation = () => {
-    setCreatedAt(fishingReport.createdAt);
-    setSpot(fishingReport.spot);
-    setWaterLevel(fishingReport.waterLevel);
-    setWeather(fishingReport.weather);
-    setTypeOfFishing(fishingReport.typeOfFishing);
-    setBait(fishingReport.bait);
-    setFood(fishingReport.food);
-    setTheCatch(fishingReport.theCatch);
-  };
-
   return (
     <>
-      <button
-        type="button"
-        className="btn btn-warning"
-        data-toggle="modal"
-        data-target={`#id${fishingReport.id}`}
-      >
-        Izmeni
-      </button>
+      <div className="pt-10 flex justify-center items-center flex-col">
+        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black">
+          Napisi izvestaj sa pecanja
+        </h1>
+        <div className="pt-10 flex flex-wrap justify-center items-center flex-col">
+          <span className="mr-2">Datum i vreme izlaska na vodu:</span>
 
-      <div
-        className="modal"
-        id={`id${fishingReport.id}`}
-        onClick={() => handleModalOperation()}
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h4 className="modal-title">Edit Fishing Report</h4>
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                onClick={() => handleModalOperation()}
-              >
-                &times;
-              </button>
-            </div>
+          <DatePicker
+            placeholder={location.state.fishingReport.created_at}
+            wrapperClassName="w-full"
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            selected={createdAt}
+            onChange={(date) => setCreatedAt(date)}
+            showTimeSelect
+            dateFormat="yyyy-MM-dd HH:mm"
+          />
 
-            <div className="modal-body">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Created at"
-                value={createdAt}
-                onChange={(e) => setCreatedAt(e.target.value)}
-              />
-            </div>
-            <div className="modal-body">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Spot"
-                value={spot}
-                onChange={(e) => setSpot(e.target.value)}
-              />
-            </div>
-            <div className="modal-body">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Water level"
-                value={waterLevel}
-                onChange={(e) => setWaterLevel(e.target.value)}
-              />
-            </div>
+          <br />
 
-            <div className="modal-body">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Weather"
-                value={weather}
-                onChange={(e) => setWeather(e.target.value)}
-              />
-            </div>
+          <span className="mr-2">Mesto pecanja:</span>
+          <input
+            type="text"
+            placeholder={location.state.fishingReport.spot}
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            onChange={(e) => setSpot(e.target.value)}
+          />
 
-            <div className="modal-body">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Type of fishing"
-                value={typeOfFishing}
-                onChange={(e) => setTypeOfFishing(e.target.value)}
-              />
-            </div>
+          <br />
 
-            <div className="modal-body">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Bait"
-                value={bait}
-                onChange={(e) => setBait(e.target.value)}
-              />
-            </div>
+          <span className="mr-2">Nivo vode tog dana:</span>
+          <input
+            type="text"
+            placeholder={location.state.fishingReport.water_level}
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            onChange={(e) => setWaterLevel(e.target.value)}
+          />
 
-            <div className="modal-body">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Food"
-                value={food}
-                onChange={(e) => setFood(e.target.value)}
-              />
-            </div>
+          <br />
 
-            <div className="modal-body">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="the catch"
-                value={theCatch}
-                onChange={(e) => setTheCatch(e.target.value)}
-              />
-            </div>
+          <span className="mr-2">
+            Vreme (suncano, oblacno, duva vetar itd.):
+          </span>
+          <input
+            type="text"
+            placeholder={location.state.fishingReport.weather}
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            onChange={(e) => setWeather(e.target.value)}
+          />
 
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-warning"
-                data-dismiss="modal"
-                onClick={() => editFishingReport(fishingReport.id)}
-              >
-                Izmeni
-              </button>
+          <br />
 
-              <button
-                type="button"
-                className="btn btn-danger"
-                data-dismiss="modal"
-                onClick={() => handleModalOperation()}
-              >
-                Odjava
-              </button>
-            </div>
-          </div>
+          <span className="mr-2">
+            Vrsta pecanja (fider, plovak, dubinka itd.):
+          </span>
+          <input
+            type="text"
+            placeholder={location.state.fishingReport.type_of_fishing}
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            onChange={(e) => setTypeOfFishing(e.target.value)}
+          />
+
+          <br />
+
+          <span className="mr-2">Mamac koji je koriscen:</span>
+          <input
+            type="text"
+            placeholder={location.state.fishingReport.bait}
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            onChange={(e) => setBait(e.target.value)}
+          />
+
+          <br />
+
+          <span className="mr-2">Hrana koja je koriscena za primamu:</span>
+          <input
+            type="text"
+            placeholder={location.state.fishingReport.food}
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            onChange={(e) => setFood(e.target.value)}
+          />
+
+          <br />
+
+          <span className="mr-2">ulov:</span>
+          <input
+            type="text"
+            placeholder={location.state.fishingReport.the_catch}
+            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            onChange={(e) => setTheCatch(e.target.value)}
+          />
         </div>
+        <br></br>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          onClick={(e) => editFishingReport(location.state.fishingReport.id)}
+        >
+          Izmeni izvestaj
+        </button>
       </div>
     </>
   );
