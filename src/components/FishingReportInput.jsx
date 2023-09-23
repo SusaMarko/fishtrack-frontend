@@ -32,11 +32,14 @@ const FishingReportInput = (props) => {
         theCatch,
       };
 
-      await fetch("http://localhost:5000/reports/fishing-reports", {
-        method: "POST",
-        headers: myHeaders,
-        body: JSON.stringify(reqBody),
-      });
+      await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/reports/fishing-reports`,
+        {
+          method: "POST",
+          headers: myHeaders,
+          body: JSON.stringify(reqBody),
+        }
+      );
 
       window.location = "/reports";
     } catch (err) {

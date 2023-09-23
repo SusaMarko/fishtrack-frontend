@@ -40,11 +40,14 @@ const EditFishingReport = () => {
         theCatch,
       };
 
-      await fetch(`http://localhost:5000/reports/fishing-reports/${id}`, {
-        method: "PUT",
-        headers: myHeaders,
-        body: JSON.stringify(body),
-      });
+      await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/reports/fishing-reports/${id}`,
+        {
+          method: "PUT",
+          headers: myHeaders,
+          body: JSON.stringify(body),
+        }
+      );
       window.location = "/reports";
     } catch (err) {
       console.error(err.message);

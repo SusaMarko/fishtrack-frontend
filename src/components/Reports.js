@@ -17,7 +17,7 @@ const Reports = (props) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:5000/reports/fishing-reports/search?term=${term}`,
+        `${process.env.REACT_APP_BACKEND_URL}/reports/fishing-reports/search?term=${term}`,
         {
           headers: { token: localStorage.token },
         }
@@ -33,10 +33,13 @@ const Reports = (props) => {
 
   const deleteFishingReport = async (id) => {
     try {
-      await fetch(`http://localhost:5000/reports/fishing-reports/${id}`, {
-        method: "DELETE",
-        headers: { token: localStorage.token },
-      });
+      await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/reports/fishing-reports/${id}`,
+        {
+          method: "DELETE",
+          headers: { token: localStorage.token },
+        }
+      );
 
       setFishingReports(
         fishingReports.filter((fishingReport) => fishingReport.id !== id)
@@ -47,7 +50,7 @@ const Reports = (props) => {
   };
 
   const getFishingReports = async () => {
-    const res = await fetch("http://localhost:5000/reports", {
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/reports`, {
       headers: { token: localStorage.token },
     });
     const fishingReportArray = await res.json();

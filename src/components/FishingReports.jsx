@@ -9,7 +9,9 @@ const FishingReports = () => {
 
   const getFishingReports = async () => {
     try {
-      const res = await fetch("http://localhost:5000/reports/fishing-reports");
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/reports/fishing-reports`
+      );
       const data = await res.json();
       setFishingReports(data);
     } catch (err) {

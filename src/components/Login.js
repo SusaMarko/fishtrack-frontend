@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
 
 const Login = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
@@ -17,11 +16,14 @@ const Login = ({ setAuth }) => {
     e.preventDefault();
     try {
       const body = { name, password };
-      const response = await fetch("http://localhost:5000/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/auth/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
 
       const parseRes = await response.json();
 
