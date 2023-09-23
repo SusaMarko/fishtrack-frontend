@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fishtrack-frontend/static/css/main.45f01686.css",
+    "main.js": "/fishtrack-frontend/static/js/main.ab0f7d09.js",
+    "index.html": "/fishtrack-frontend/index.html",
+    "main.45f01686.css.map": "/fishtrack-frontend/static/css/main.45f01686.css.map",
+    "main.ab0f7d09.js.map": "/fishtrack-frontend/static/js/main.ab0f7d09.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45f01686.css",
+    "static/js/main.ab0f7d09.js"
+  ]
+}
