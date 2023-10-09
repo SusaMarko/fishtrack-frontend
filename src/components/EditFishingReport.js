@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import DatePicker from "react-datepicker";
+import { Link } from "react-router-dom";
 
 const EditFishingReport = () => {
   const location = useLocation();
@@ -154,6 +155,7 @@ const EditFishingReport = () => {
         >
           Izmeni izvestaj
         </button>
+        <Link to="/reports">Nazad</Link>
       </div>
     </>
   );

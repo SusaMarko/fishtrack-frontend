@@ -8,7 +8,7 @@ const FishTrackNavbar = (props) => {
   };
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -60,7 +60,7 @@ const FishTrackNavbar = (props) => {
         </div>
         <a
           href="/"
-          className="bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-lg text-4xl no-underline"
+          className="bg-black hover:bg-gray-900 text-white py-3 px-6 rounded-lg text-4xl no-underline transition duration-300 ease-in-out"
         >
           FishTrack
         </a>
