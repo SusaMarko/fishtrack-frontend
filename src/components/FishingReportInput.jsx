@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FishTrackNavbar from "./FishTrackNavbar";
 import DatePicker from "react-datepicker";
+import { Link } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 
 const FishingReportInput = (props) => {
@@ -148,6 +149,7 @@ const FishingReportInput = (props) => {
         >
           Napravi izvestaj
         </button>
+        <Link to="/reports">Nazad</Link>
       </div>
     </>
   );

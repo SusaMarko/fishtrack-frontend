@@ -58,9 +58,10 @@ const EditFishingReport = () => {
   return (
     <>
       <div className="pt-10 flex justify-center items-center flex-col">
-        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black">
+        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black text-center">
           Napisi izvestaj sa pecanja
         </h1>
+
         <div className="pt-10 flex flex-wrap justify-center items-center flex-col">
           <span className="mr-2">Datum i vreme izlaska na vodu:</span>
 
