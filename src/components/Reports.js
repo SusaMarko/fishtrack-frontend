@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import FishTrackNavbar from "./FishTrackNavbar";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import Comments from "./Comments";
 
 const Reports = (props) => {
   const [fishingReports, setFishingReports] = useState([]);
@@ -158,6 +159,7 @@ const Reports = (props) => {
                   </div>
                 </div>
               )}
+              <Comments fishingReportId={fishingReport.id} />
             </li>
           ))}
         </ul>
