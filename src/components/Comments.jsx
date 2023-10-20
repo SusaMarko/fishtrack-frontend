@@ -19,6 +19,22 @@ const Comments = (props) => {
     setComments(data);
   };
 
+  const deleteComments = async (id) => {
+    try {
+      await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/reports/comments/${id}`,
+        {
+          method: "DELETE",
+          headers: { token: localStorage.token },
+        }
+      );
+
+      setComments(comments.filter((comment) => comment.id !== id));
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   const modifyLikes = async (e, id, increment) => {
     e.preventDefault();
     try {
@@ -59,8 +75,9 @@ const Comments = (props) => {
                   {/* TODO */}
                   <button>Izmeni</button>
                   <br />
-                  {/* TODO */}
-                  <button>Obrisi</button>
+                  <button onClick={(e) => deleteComments(comment.id)}>
+                    Obrisi
+                  </button>
                 </div>
               )}
             </li>
