@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
+import CommentInput from "./CommentInput";
 
 const Comments = (props) => {
   const [comments, setComments] = useState([]);
@@ -53,29 +54,40 @@ const Comments = (props) => {
 
   return (
     <>
-      <textarea></textarea>
-      {/* TODO */}
-      <button>Napravi komentar</button>
-      <ul>
+      <CommentInput fishingReportId={props.fishingReportId} />
+      <ul className="mt-4">
         {comments.map((comment) => {
           return (
-            <li key={comment.fishingReportId}>
-              <p>Datum: {comment.created_at}</p>
-              <p>Text: {comment.comment_text}</p>
-              <p>Lajkovi: {comment.likes}</p>
-              <button onClick={(e) => modifyLikes(e, comment.id, true)}>
-                Like
+            <li
+              key={comment.fishingReportId}
+              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
+            >
+              <p className="text-sm text-gray-600">
+                Datum: {comment.created_at}
+              </p>
+              <p className="text-base">Text: {comment.comment_text}</p>
+              <p className="text-sm text-gray-600">Lajkovi: {comment.likes}</p>
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full my-2"
+                onClick={(e) => modifyLikes(e, comment.id, true)}
+              >
+                <i className="fas fa-thumbs-up"></i> Like
               </button>
-              <br />
-              <button onClick={(e) => modifyLikes(e, comment.id, false)}>
-                Dislike
+              <button
+                className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded-full my-2"
+                onClick={(e) => modifyLikes(e, comment.id, false)}
+              >
+                <i className="fas fa-thumbs-down"></i> Dislike
               </button>
               {jwt_decode(localStorage.token).user === comment.user_id && (
-                <div>
-                  {/* TODO */}
-                  <button>Izmeni</button>
-                  <br />
-                  <button onClick={(e) => deleteComments(comment.id)}>
+                <div className="mt-4">
+                  <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded-full">
+                    Izmeni
+                  </button>
+                  <button
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded-full mt-2"
+                    onClick={(e) => deleteComments(comment.id)}
+                  >
                     Obrisi
                   </button>
                 </div>

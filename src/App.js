@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FishingReportInput from "./components/FishingReportInput";
+
 import Reports from "./components/Reports";
 import {
   BrowserRouter as Router,
