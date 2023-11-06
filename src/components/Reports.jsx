@@ -78,13 +78,13 @@ const Reports = (props) => {
     <>
       <FishTrackNavbar setAuth={props.setAuth} />
       <br></br>
-      <br></br>
+
       <div className="container text-center">
         <form className="d-flex" onSubmit={onSubmitForm}>
           <input
             type="text"
             name="name"
-            placeholder="Unesi za pretragu ..."
+            placeholder="Unesi tekst za pretragu..."
             className="form-control"
             value={term}
             onChange={(e) => setTermAndFetchFishingReports(e)}
@@ -98,68 +98,66 @@ const Reports = (props) => {
               className="border p-4 rounded-md shadow-md hover:shadow-lg transition duration-300"
               key={fishingReport.id}
             >
-              <div className="text-gray-700">
+              <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Datum:</span>
                 <span className="ml-2">
                   {dateToTime(new Date(fishingReport.created_at))}
                 </span>
               </div>
-              <div className="text-gray-700 mt-2">
+              <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Mesto pecanja:</span>
                 <span className="ml-2">{fishingReport.spot}</span>
               </div>
-              <div className="text-gray-700 mt-2">
+              <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Nivo vode:</span>
                 <span className="ml-2">{fishingReport.water_level}</span>
               </div>
-              <div className="text-gray-700 mt-2">
+              <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Vreme:</span>
                 <span className="ml-2">{fishingReport.weather}</span>
               </div>
-              <div className="text-gray-700 mt-2">
+              <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Vrsta pecanja:</span>
                 <span className="ml-2">{fishingReport.type_of_fishing}</span>
               </div>
-              <div className="text-gray-700 mt-2">
+              <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Mamac:</span>
                 <span className="ml-2">{fishingReport.bait}</span>
               </div>
-              <div className="text-gray-700 mt-2">
+              <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Primama:</span>
                 <span className="ml-2">{fishingReport.food}</span>
               </div>
-              <div className="text-gray-700 mt-2">
+              <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Ulov:</span>
                 <span className="ml-2">{fishingReport.the_catch}</span>
               </div>
               {jwt_decode(localStorage.token).user ===
                 fishingReport.user_id && (
-                <div className="mt-4">
-                  <div className="flex space-x-4">
-                    <button
-                      className="btn bg-yellow-500 hover:bg-yellow-400 text-white"
-                      onClick={() => {
-                        navigate("/edit", {
-                          state: {
-                            // setAuth: props.setAuth,
-                            fishingReport: fishingReport,
-                          },
-                        });
-                      }}
-                    >
-                      Izmeni
-                    </button>
+                <div className="mt-4 flex space-x-4">
+                  <button
+                    className="btn bg-yellow-500 hover:bg-yellow-400 text-white"
+                    onClick={() => {
+                      navigate("/edit", {
+                        state: {
+                          // setAuth: props.setAuth,
+                          fishingReport: fishingReport,
+                        },
+                      });
+                    }}
+                  >
+                    Izmeni
+                  </button>
 
-                    <button
-                      className="btn bg-red-500 hover:bg-red-400 text-white"
-                      onClick={() => deleteFishingReport(fishingReport.id)}
-                    >
-                      Obrisi
-                    </button>
-                  </div>
+                  <button
+                    className="btn bg-red-500 hover:bg-red-400 text-white"
+                    onClick={() => deleteFishingReport(fishingReport.id)}
+                  >
+                    Obrisi
+                  </button>
                 </div>
               )}
-              <Comments fishingReportId={fishingReport.id} />
+              {<Comments fishingReportId={fishingReport.id} />}
             </li>
           ))}
         </ul>
