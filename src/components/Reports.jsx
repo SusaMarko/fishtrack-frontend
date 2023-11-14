@@ -134,13 +134,12 @@ const Reports = (props) => {
               </div>
               {jwt_decode(localStorage.token).user ===
                 fishingReport.user_id && (
-                <div className="mt-4 flex space-x-4">
+                <div className="mt-4 flex justify-center items-center space-x-4">
                   <button
                     className="btn bg-yellow-500 hover:bg-yellow-400 text-white"
                     onClick={() => {
                       navigate("/edit", {
                         state: {
-                          // setAuth: props.setAuth,
                           fishingReport: fishingReport,
                         },
                       });
@@ -157,6 +156,7 @@ const Reports = (props) => {
                   </button>
                 </div>
               )}
+              <br />
               {<Comments fishingReportId={fishingReport.id} />}
             </li>
           ))}
