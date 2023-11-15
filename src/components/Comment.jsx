@@ -24,21 +24,22 @@ const Comment = (props) => {
 
   const modifyLikes = async (e, id, increment) => {
     e.preventDefault();
-    if (increment) {
-      localStorage.setItem(id, "liked");
-    } else {
-      localStorage.setItem(id, "disliked");
-    }
-    setLikes(increment ? likes + 1 : likes - 1);
+
     try {
       await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/reports/comments/${id}/likes?increment=${increment}`,
-
         {
           method: "PUT",
           headers: { token: localStorage.token },
         }
       );
+
+      if (increment) {
+        localStorage.setItem(id, "liked");
+      } else {
+        localStorage.setItem(id, "disliked");
+      }
+      setLikes(increment ? likes + 1 : likes - 1);
     } catch (err) {
       console.error(err.message);
     }
