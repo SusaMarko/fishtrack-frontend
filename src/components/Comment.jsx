@@ -51,18 +51,21 @@ const Comment = (props) => {
         key={props.comment.fishingReportId}
         className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
       >
-        <p className="text-sm text-gray-600 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+        <p className="text-sm text-gray-600 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
           Datum: {props.comment.created_at}
         </p>
-        <p className="text-base border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+
+        <p className="text-base border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
           Text: {props.comment.comment_text}
         </p>
-        <p className="text-sm text-gray-600 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+
+        <p className="text-sm text-gray-600 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
           Lajkovi: {likes}
         </p>
+
         {localStorage.getItem(props.comment.id) !== "liked" && (
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full my-2"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full my-2 mr-2"
             onClick={(e) => modifyLikes(e, props.comment.id, true)}
           >
             <i className="fas fa-thumbs-up"></i> Like
@@ -77,9 +80,9 @@ const Comment = (props) => {
           </button>
         )}
         {jwt_decode(localStorage.token).user === props.comment.user_id && (
-          <div className="mt-4">
+          <div className="">
             <button
-              className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded-full"
+              className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded-full mr-2"
               onClick={() => setShowEditComment(!showEditComment)}
             >
               Izmeni
@@ -99,6 +102,7 @@ const Comment = (props) => {
           </div>
         )}
       </li>
+      <br />
     </>
   );
 };

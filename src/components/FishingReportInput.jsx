@@ -52,9 +52,10 @@ const FishingReportInput = (props) => {
     <>
       <FishTrackNavbar setAuth={props.setAuth} />
       <div className="pt-10 flex justify-center items-center flex-col">
-        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black">
+        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black mx-auto text-center">
           Napisi izvestaj sa pecanja
         </h1>
+
         <div className="pt-10 flex flex-wrap justify-center items-center flex-col">
           <span className="mr-2">Datum i vreme izlaska na vodu:</span>
 
@@ -149,7 +150,12 @@ const FishingReportInput = (props) => {
         >
           Napravi izvestaj
         </button>
-        <Link to="/reports">Nazad</Link>
+        <Link
+          to="/reports"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2"
+        >
+          Nazad
+        </Link>
       </div>
     </>
   );

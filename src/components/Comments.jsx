@@ -29,6 +29,7 @@ const Comments = (props) => {
       >
         Komentari
       </button>
+
       {render && (
         <>
           <CommentInput fishingReportId={props.fishingReportId} />

@@ -60,7 +60,7 @@ const FishTrackNavbar = (props) => {
         </div>
         <a
           href="/"
-          className="bg-black hover:bg-gray-900 text-white py-3 px-6 rounded-lg text-4xl no-underline transition duration-300 ease-in-out"
+          className="bg-black hover:bg-gray-900 text-white py-3 px-6 rounded-lg text-4xl no-underline transition duration-300 ease-in-out ml-2"
         >
           FishTrack
         </a>

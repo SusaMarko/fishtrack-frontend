@@ -36,7 +36,7 @@ const CommentInput = (props) => {
         <input
           type="text"
           placeholder="Napisi komentar..."
-          className="comment-text border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
+          className="comment-text border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mt-2"
           onChange={(e) => setCommentText(e.target.value)}
         />
       </div>

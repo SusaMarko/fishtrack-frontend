@@ -84,12 +84,12 @@ const Reports = (props) => {
           <input
             type="text"
             name="name"
-            placeholder="Unesi tekst za pretragu..."
+            placeholder="Pretrazi..."
             className="form-control"
             value={term}
             onChange={(e) => setTermAndFetchFishingReports(e)}
           ></input>
-          <button className="btn btn-success">Pretraga</button>
+          <button className="btn btn-success ml-2">Pretraga</button>
         </form>
         <br></br>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -104,10 +104,11 @@ const Reports = (props) => {
                   {dateToTime(new Date(fishingReport.created_at))}
                 </span>
               </div>
-              <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+              <div className="flex flex-col text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Mesto pecanja:</span>
                 <span className="ml-2">{fishingReport.spot}</span>
               </div>
+
               <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Nivo vode:</span>
                 <span className="ml-2">{fishingReport.water_level}</span>

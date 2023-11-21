@@ -156,7 +156,12 @@ const EditFishingReport = () => {
         >
           Izmeni izvestaj
         </button>
-        <Link to="/reports">Nazad</Link>
+        <Link
+          to="/reports"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2"
+        >
+          Nazad
+        </Link>
       </div>
     </>
   );
