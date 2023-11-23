@@ -91,9 +91,7 @@ const FishingReportInput = (props) => {
 
           <br />
 
-          <span className="mr-2">
-            Vreme (suncano, oblacno, duva vetar itd.):
-          </span>
+          <span className="mr-2">Vreme (suncano, oblacno, itd.):</span>
           <input
             type="text"
             placeholder=""
@@ -103,9 +101,7 @@ const FishingReportInput = (props) => {
 
           <br />
 
-          <span className="mr-2">
-            Vrsta pecanja (fider, plovak, dubinka itd.):
-          </span>
+          <span className="mr-2">Vrsta pecanja (fider, plovak, itd.):</span>
           <input
             type="text"
             placeholder=""
@@ -115,7 +111,7 @@ const FishingReportInput = (props) => {
 
           <br />
 
-          <span className="mr-2">Mamac koji je koriscen:</span>
+          <span className="mr-2">Mamac:</span>
           <input
             type="text"
             placeholder=""
@@ -125,7 +121,7 @@ const FishingReportInput = (props) => {
 
           <br />
 
-          <span className="mr-2">Hrana koja je koriscena za primamu:</span>
+          <span className="mr-2">Hrana za primamu:</span>
           <input
             type="text"
             placeholder=""

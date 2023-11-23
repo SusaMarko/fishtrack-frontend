@@ -31,7 +31,7 @@ const CommentInput = (props) => {
   };
 
   return (
-    <div className="comment-container">
+    <div className="comment-container border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mt-2">
       <div className="comment-input">
         <input
           type="text"

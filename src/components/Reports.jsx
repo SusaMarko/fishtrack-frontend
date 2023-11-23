@@ -104,7 +104,7 @@ const Reports = (props) => {
                   {dateToTime(new Date(fishingReport.created_at))}
                 </span>
               </div>
-              <div className="flex flex-col text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+              <div className="text-gray-700 mt-2 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
                 <span className="font-bold">Mesto pecanja:</span>
                 <span className="ml-2">{fishingReport.spot}</span>
               </div>

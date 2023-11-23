@@ -51,16 +51,18 @@ const Comment = (props) => {
         key={props.comment.fishingReportId}
         className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
       >
-        <p className="text-sm text-gray-600 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
-          Datum: {props.comment.created_at}
+        <p className="text-base border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
+          <span style={{ fontWeight: "bold" }}>Datum:</span>{" "}
+          {props.comment.created_at}
         </p>
 
         <p className="text-base border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
-          Text: {props.comment.comment_text}
+          <span style={{ fontWeight: "bold" }}>Text:</span>{" "}
+          {props.comment.comment_text}
         </p>
 
-        <p className="text-sm text-gray-600 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
-          Lajkovi: {likes}
+        <p className="text-base border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
+          <span style={{ fontWeight: "bold" }}>Lajkovi:</span> {likes}
         </p>
 
         {localStorage.getItem(props.comment.id) !== "liked" && (

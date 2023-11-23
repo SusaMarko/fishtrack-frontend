@@ -37,7 +37,7 @@ const Login = ({ setAuth }) => {
 
   return (
     <>
-      <h1 className="text-center my-5">Prijavi se</h1>
+      <h1 className="text-center font-bold my-5">Prijavi se</h1>
       <form onSubmit={onSubmitForm}>
         <input
           type="name"
