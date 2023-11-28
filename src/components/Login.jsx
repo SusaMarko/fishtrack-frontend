@@ -55,7 +55,7 @@ const Login = ({ setAuth }) => {
           value={password}
           onChange={(e) => onChange(e)}
         />
-        <button className="btn text-white bg-emerald-800 btn-success btn-block">
+        <button className="btn text-white bg-emerald-900 btn-success btn-block">
           Potvrda
         </button>
       </form>

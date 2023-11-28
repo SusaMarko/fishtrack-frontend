@@ -24,7 +24,7 @@ const Comments = (props) => {
   return (
     <>
       <button
-        className="btn bg-emerald-800 hover:bg-emerald-950 text-white"
+        className="btn bg-emerald-900 hover:bg-emerald-950 text-white"
         onClick={() => setRender(!render)}
       >
         Komentari

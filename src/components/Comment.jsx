@@ -47,7 +47,7 @@ const Comment = (props) => {
 
   return (
     <>
-      <div className="bg-emerald-800">
+      <div className="bg-emerald-900 mb-4">
         <li
           key={props.comment.fishingReportId}
           className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
@@ -68,7 +68,7 @@ const Comment = (props) => {
 
           {localStorage.getItem(props.comment.id) !== "liked" && (
             <button
-              className="bg-emerald-950 hover:bg-emerald-800 text-white font-bold py-1 px-2 rounded-full my-2 mr-2"
+              className="bg-emerald-950 hover:bg-emerald-900 text-white font-bold py-1 px-2 rounded-full my-2 mr-2"
               onClick={(e) => modifyLikes(e, props.comment.id, true)}
             >
               <i className="fas fa-thumbs-up"></i> Like
@@ -76,7 +76,7 @@ const Comment = (props) => {
           )}
           {localStorage.getItem(props.comment.id) !== "disliked" && (
             <button
-              className="bg-emerald-950 hover:bg-emerald-800 text-white font-bold py-1 px-2 rounded-full my-2"
+              className="bg-emerald-950 hover:bg-emerald-900 text-white font-bold py-1 px-2 rounded-full my-2"
               onClick={(e) => modifyLikes(e, props.comment.id, false)}
             >
               <i className="fas fa-thumbs-down"></i> Dislike
@@ -85,13 +85,13 @@ const Comment = (props) => {
           {jwt_decode(localStorage.token).user === props.comment.user_id && (
             <div className="">
               <button
-                className="bg-emerald-950 hover:bg-emerald-800 text-white font-bold py-1 px-2 rounded-full mr-2"
+                className="bg-emerald-950 hover:bg-emerald-900 text-white font-bold py-1 px-2 rounded-full mr-2"
                 onClick={() => setShowEditComment(!showEditComment)}
               >
                 Izmeni
               </button>
               <button
-                className="bg-emerald-950 hover:bg-emerald-800 text-white font-bold py-1 px-2 rounded-full mt-2"
+                className="bg-emerald-950 hover:bg-emerald-900 text-white font-bold py-1 px-2 rounded-full mt-2"
                 onClick={(e) => deleteComments(props.comment.id)}
               >
                 Obrisi
@@ -105,7 +105,6 @@ const Comment = (props) => {
             </div>
           )}
         </li>
-        <br />
       </div>
     </>
   );

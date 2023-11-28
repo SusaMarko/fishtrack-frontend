@@ -31,7 +31,7 @@ const CommentInput = (props) => {
   };
 
   return (
-    <div className="bg-emerald-800 comment-container border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mt-2">
+    <div className="bg-emerald-900 comment-container border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mt-2">
       <div className="comment-input">
         <input
           type="text"
@@ -41,7 +41,7 @@ const CommentInput = (props) => {
         />
       </div>
       <button
-        className="bg-emerald-950 hover:bg-emerald-800 text-white font-bold py-2 px-4 rounded-full mt-2"
+        className="bg-emerald-950 hover:bg-emerald-900 text-white font-bold py-2 px-4 rounded-full mt-2"
         onClick={(e) => handleButtonClicked(e)}
       >
         Napravi komentar

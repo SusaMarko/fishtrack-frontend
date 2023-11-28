@@ -62,7 +62,7 @@ const FishingReportInput = (props) => {
           <DatePicker
             placeholder=""
             wrapperClassName="w-full"
-            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-gray-500 text-white"
             selected={createdAt}
             onChange={(date) => setCreatedAt(date)}
             showTimeSelect
@@ -75,7 +75,7 @@ const FishingReportInput = (props) => {
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setSpot(e.target.value)}
           />
 
@@ -85,7 +85,7 @@ const FishingReportInput = (props) => {
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setWaterLevel(e.target.value)}
           />
 
@@ -97,7 +97,7 @@ const FishingReportInput = (props) => {
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setWeather(e.target.value)}
           />
 
@@ -109,7 +109,7 @@ const FishingReportInput = (props) => {
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setTypeOfFishing(e.target.value)}
           />
 
@@ -119,7 +119,7 @@ const FishingReportInput = (props) => {
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setBait(e.target.value)}
           />
 
@@ -129,7 +129,7 @@ const FishingReportInput = (props) => {
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setFood(e.target.value)}
           />
 
@@ -139,20 +139,20 @@ const FishingReportInput = (props) => {
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setTheCatch(e.target.value)}
           />
         </div>
         <br></br>
         <button
-          className="bg-emerald-800 hover:bg-emerald-950 text-white font-bold py-2 px-4 rounded-full"
+          className="bg-emerald-900 hover:bg-emerald-950 text-white font-bold py-2 px-4 rounded-full"
           onClick={(e) => handleButtonClicked(e)}
         >
           Napravi izvestaj
         </button>
         <Link
           to="/reports"
-          className="bg-emerald-800 hover:bg-emerald-950 text-white font-bold py-2 px-4 rounded-full mt-2"
+          className="bg-emerald-900 hover:bg-emerald-950 text-white font-bold py-2 px-4 rounded-full mt-2"
         >
           Nazad
         </Link>

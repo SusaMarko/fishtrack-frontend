@@ -31,12 +31,12 @@ const EditComment = (props) => {
   return (
     <>
       <div className="pt-10 flex justify-center items-center flex-col">
-        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black text-center">
+        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-white text-center">
           Izmeni komentar
         </h1>
 
-        <div className="pt-10 flex flex-wrap justify-center items-center flex-col">
-          <span className="mr-2">Tekst komentara:</span>
+        <div className="pt-10 flex flex-wrap text-white justify-center items-center flex-col">
+          <span className="mr-2 font-bold">Tekst komentara</span>
           <input
             type="text"
             placeholder={props.commentText}
@@ -46,7 +46,7 @@ const EditComment = (props) => {
         </div>
         <br></br>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          className="bg-emerald-950 hover:bg-emerald-900 text-white font-bold py-2 px-4 rounded-full"
           onClick={() => editComment(props.commentId)}
         >
           Izmeni komentar

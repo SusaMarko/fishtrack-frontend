@@ -57,8 +57,8 @@ const EditFishingReport = () => {
 
   return (
     <>
-      <div className="pt-10 flex justify-center items-center flex-col">
-        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black text-center">
+      <div className="pt-10 bg-emerald-950 flex justify-center items-center flex-col">
+        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-white text-center">
           Izmeni izvestaj sa pecanja
         </h1>
 
@@ -68,7 +68,7 @@ const EditFishingReport = () => {
           <DatePicker
             placeholder={location.state.fishingReport.created_at}
             wrapperClassName="w-full"
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-white text-white"
             selected={createdAt}
             onChange={(date) => setCreatedAt(date)}
             showTimeSelect
@@ -81,7 +81,7 @@ const EditFishingReport = () => {
           <input
             type="text"
             placeholder={location.state.fishingReport.spot}
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-white text-white"
             onChange={(e) => setSpot(e.target.value)}
           />
 
@@ -91,7 +91,7 @@ const EditFishingReport = () => {
           <input
             type="text"
             placeholder={location.state.fishingReport.water_level}
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-white text-white"
             onChange={(e) => setWaterLevel(e.target.value)}
           />
 
@@ -101,7 +101,7 @@ const EditFishingReport = () => {
           <input
             type="text"
             placeholder={location.state.fishingReport.weather}
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-white text-white"
             onChange={(e) => setWeather(e.target.value)}
           />
 
@@ -111,7 +111,7 @@ const EditFishingReport = () => {
           <input
             type="text"
             placeholder={location.state.fishingReport.type_of_fishing}
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-white text-white"
             onChange={(e) => setTypeOfFishing(e.target.value)}
           />
 
@@ -121,7 +121,7 @@ const EditFishingReport = () => {
           <input
             type="text"
             placeholder={location.state.fishingReport.bait}
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-white text-white"
             onChange={(e) => setBait(e.target.value)}
           />
 
@@ -131,7 +131,7 @@ const EditFishingReport = () => {
           <input
             type="text"
             placeholder={location.state.fishingReport.food}
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-white text-white"
             onChange={(e) => setFood(e.target.value)}
           />
 
@@ -141,20 +141,20 @@ const EditFishingReport = () => {
           <input
             type="text"
             placeholder={location.state.fishingReport.the_catch}
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-900 rounded-md placeholder-white text-white"
             onChange={(e) => setTheCatch(e.target.value)}
           />
         </div>
         <br></br>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          className="bg-emerald-900 hover:bg-emerald-950 text-white font-bold py-2 px-4 rounded-full"
           onClick={(e) => editFishingReport(location.state.fishingReport.id)}
         >
           Izmeni izvestaj
         </button>
         <Link
           to="/reports"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2"
+          className="bg-emerald-900 hover:bg-emerald-950 text-white font-bold py-2 px-4 rounded-full mt-2"
         >
           Nazad
         </Link>
