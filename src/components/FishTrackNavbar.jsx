@@ -11,10 +11,13 @@ const FishTrackNavbar = (props) => {
     <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label
+            tabIndex={0}
+            className="btn bg-emerald-800 btn-ghost lg:hidden"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 text-white"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -29,12 +32,12 @@ const FishTrackNavbar = (props) => {
           </label>
           <ul
             tabIndex={0}
-            className="space-y-4 ... menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="bg-emerald-950 space-y-4 ... menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
           >
             <li>
               <a
                 href="/input"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-emerald-800 text-white font-bold py-2 px-4 rounded-full"
               >
                 Dodaj izvestaj sa pecanja
               </a>
@@ -42,7 +45,7 @@ const FishTrackNavbar = (props) => {
             <li>
               <a
                 href="/reports"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-emerald-800 text-white font-bold py-2 px-4 rounded-full"
               >
                 Pregled svih izvestaja sa pecanja
               </a>
@@ -50,7 +53,7 @@ const FishTrackNavbar = (props) => {
 
             <li>
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-emerald-800 text-white font-bold py-2 px-4 rounded-full"
                 onClick={(e) => logout(e)}
               >
                 Odjava
@@ -60,17 +63,17 @@ const FishTrackNavbar = (props) => {
         </div>
         <a
           href="/"
-          className="bg-black hover:bg-gray-900 text-white py-3 px-6 rounded-lg text-4xl no-underline transition duration-300 ease-in-out ml-2"
+          className="bg-emerald-900 hover:bg-emerald-950 text-white py-3 px-6 rounded-lg text-4xl no-underline transition duration-300 ease-in-out ml-2"
         >
           FishTrack
         </a>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="bg-emerald-950 navbar-center hidden lg:flex">
         <ul className="space-x-4 ... menu menu-horizontal px-1">
           <li>
             <a
               href="/input"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-emerald-800 text-white font-bold py-2 px-4 rounded-full"
             >
               Dodaj izvestaj sa pecanja
             </a>
@@ -79,7 +82,7 @@ const FishTrackNavbar = (props) => {
           <li>
             <a
               href="/reports"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-emerald-800 text-white font-bold py-2 px-4 rounded-full"
             >
               Pregled svih izvestaja sa pecanja
             </a>
@@ -87,7 +90,7 @@ const FishTrackNavbar = (props) => {
 
           <li>
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-emerald-800 text-white font-bold py-2 px-4 rounded-full"
               onClick={(e) => logout(e)}
             >
               Odjava

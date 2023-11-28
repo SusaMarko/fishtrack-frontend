@@ -47,64 +47,66 @@ const Comment = (props) => {
 
   return (
     <>
-      <li
-        key={props.comment.fishingReportId}
-        className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
-      >
-        <p className="text-base border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
-          <span style={{ fontWeight: "bold" }}>Datum:</span>{" "}
-          {props.comment.created_at}
-        </p>
+      <div className="bg-emerald-800">
+        <li
+          key={props.comment.fishingReportId}
+          className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
+        >
+          <p className="bg-emerald-950 text-white border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
+            <span style={{ fontWeight: "bold" }}>Datum:</span>{" "}
+            {props.comment.created_at}
+          </p>
 
-        <p className="text-base border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
-          <span style={{ fontWeight: "bold" }}>Text:</span>{" "}
-          {props.comment.comment_text}
-        </p>
+          <p className="bg-emerald-950 text-white border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
+            <span style={{ fontWeight: "bold" }}>Text:</span>{" "}
+            {props.comment.comment_text}
+          </p>
 
-        <p className="text-base border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
-          <span style={{ fontWeight: "bold" }}>Lajkovi:</span> {likes}
-        </p>
+          <p className="bg-emerald-950 text-white border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 mb-2">
+            <span style={{ fontWeight: "bold" }}>Lajkovi:</span> {likes}
+          </p>
 
-        {localStorage.getItem(props.comment.id) !== "liked" && (
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full my-2 mr-2"
-            onClick={(e) => modifyLikes(e, props.comment.id, true)}
-          >
-            <i className="fas fa-thumbs-up"></i> Like
-          </button>
-        )}
-        {localStorage.getItem(props.comment.id) !== "disliked" && (
-          <button
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded-full my-2"
-            onClick={(e) => modifyLikes(e, props.comment.id, false)}
-          >
-            <i className="fas fa-thumbs-down"></i> Dislike
-          </button>
-        )}
-        {jwt_decode(localStorage.token).user === props.comment.user_id && (
-          <div className="">
+          {localStorage.getItem(props.comment.id) !== "liked" && (
             <button
-              className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded-full mr-2"
-              onClick={() => setShowEditComment(!showEditComment)}
+              className="bg-emerald-950 hover:bg-emerald-800 text-white font-bold py-1 px-2 rounded-full my-2 mr-2"
+              onClick={(e) => modifyLikes(e, props.comment.id, true)}
             >
-              Izmeni
+              <i className="fas fa-thumbs-up"></i> Like
             </button>
+          )}
+          {localStorage.getItem(props.comment.id) !== "disliked" && (
             <button
-              className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded-full mt-2"
-              onClick={(e) => deleteComments(props.comment.id)}
+              className="bg-emerald-950 hover:bg-emerald-800 text-white font-bold py-1 px-2 rounded-full my-2"
+              onClick={(e) => modifyLikes(e, props.comment.id, false)}
             >
-              Obrisi
+              <i className="fas fa-thumbs-down"></i> Dislike
             </button>
-            {showEditComment && (
-              <EditComment
-                commentId={props.comment.id}
-                commentText={props.comment.comment_text}
-              />
-            )}
-          </div>
-        )}
-      </li>
-      <br />
+          )}
+          {jwt_decode(localStorage.token).user === props.comment.user_id && (
+            <div className="">
+              <button
+                className="bg-emerald-950 hover:bg-emerald-800 text-white font-bold py-1 px-2 rounded-full mr-2"
+                onClick={() => setShowEditComment(!showEditComment)}
+              >
+                Izmeni
+              </button>
+              <button
+                className="bg-emerald-950 hover:bg-emerald-800 text-white font-bold py-1 px-2 rounded-full mt-2"
+                onClick={(e) => deleteComments(props.comment.id)}
+              >
+                Obrisi
+              </button>
+              {showEditComment && (
+                <EditComment
+                  commentId={props.comment.id}
+                  commentText={props.comment.comment_text}
+                />
+              )}
+            </div>
+          )}
+        </li>
+        <br />
+      </div>
     </>
   );
 };

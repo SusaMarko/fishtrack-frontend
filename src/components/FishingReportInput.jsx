@@ -52,17 +52,17 @@ const FishingReportInput = (props) => {
     <>
       <FishTrackNavbar setAuth={props.setAuth} />
       <div className="pt-10 flex justify-center items-center flex-col">
-        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-black mx-auto text-center">
+        <h1 className="flex justify-center items-center flex-col w-full text-3xl font-bold text-white mx-auto text-center">
           Napisi izvestaj sa pecanja
         </h1>
 
         <div className="pt-10 flex flex-wrap justify-center items-center flex-col">
-          <span className="mr-2">Datum i vreme izlaska na vodu:</span>
+          <span className="mr-2 text-white">Datum i vreme izlaska na vodu</span>
 
           <DatePicker
             placeholder=""
             wrapperClassName="w-full"
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
             selected={createdAt}
             onChange={(date) => setCreatedAt(date)}
             showTimeSelect
@@ -71,84 +71,88 @@ const FishingReportInput = (props) => {
 
           <br />
 
-          <span className="mr-2">Mesto pecanja:</span>
+          <span className="mr-2 text-white">Mesto pecanja</span>
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setSpot(e.target.value)}
           />
 
           <br />
 
-          <span className="mr-2">Nivo vode tog dana:</span>
+          <span className="mr-2 text-white">Nivo vode tog dana</span>
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setWaterLevel(e.target.value)}
           />
 
           <br />
 
-          <span className="mr-2">Vreme (suncano, oblacno, itd.):</span>
+          <span className="mr-2 text-white">
+            Vreme (suncano, oblacno, itd.)
+          </span>
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setWeather(e.target.value)}
           />
 
           <br />
 
-          <span className="mr-2">Vrsta pecanja (fider, plovak, itd.):</span>
+          <span className="mr-2 text-white">
+            Vrsta pecanja (fider, plovak, itd.)
+          </span>
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setTypeOfFishing(e.target.value)}
           />
 
           <br />
 
-          <span className="mr-2">Mamac:</span>
+          <span className="mr-2 text-white">Mamac</span>
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setBait(e.target.value)}
           />
 
           <br />
 
-          <span className="mr-2">Hrana za primamu:</span>
+          <span className="mr-2 text-white">Hrana za primamu</span>
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setFood(e.target.value)}
           />
 
           <br />
 
-          <span className="mr-2">ulov:</span>
+          <span className="mr-2 text-white">Ulov</span>
           <input
             type="text"
             placeholder=""
-            className="w-full p-4 bg-gray-200 rounded-md placeholder-gray-500 text-gray-800"
+            className="w-full p-4 bg-emerald-800 rounded-md placeholder-gray-500 text-white"
             onChange={(e) => setTheCatch(e.target.value)}
           />
         </div>
         <br></br>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          className="bg-emerald-800 hover:bg-emerald-950 text-white font-bold py-2 px-4 rounded-full"
           onClick={(e) => handleButtonClicked(e)}
         >
           Napravi izvestaj
         </button>
         <Link
           to="/reports"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2"
+          className="bg-emerald-800 hover:bg-emerald-950 text-white font-bold py-2 px-4 rounded-full mt-2"
         >
           Nazad
         </Link>

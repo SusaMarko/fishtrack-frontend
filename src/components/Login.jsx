@@ -37,7 +37,7 @@ const Login = ({ setAuth }) => {
 
   return (
     <>
-      <h1 className="text-center font-bold my-5">Prijavi se</h1>
+      <h1 className="text-center text-white font-bold my-5">Prijavi se</h1>
       <form onSubmit={onSubmitForm}>
         <input
           type="name"
@@ -55,7 +55,9 @@ const Login = ({ setAuth }) => {
           value={password}
           onChange={(e) => onChange(e)}
         />
-        <button className="btn btn-success btn-block">Potvrda</button>
+        <button className="btn text-white bg-emerald-800 btn-success btn-block">
+          Potvrda
+        </button>
       </form>
     </>
   );
