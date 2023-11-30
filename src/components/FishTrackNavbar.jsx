@@ -37,7 +37,7 @@ const FishTrackNavbar = (props) => {
             <li>
               <a
                 href="/input"
-                className="bg-emerald-900 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-emerald-900 border border-gray-300 text-white font-bold py-2 px-4 rounded-full"
               >
                 Dodaj izvestaj sa pecanja
               </a>
@@ -45,7 +45,7 @@ const FishTrackNavbar = (props) => {
             <li>
               <a
                 href="/reports"
-                className="bg-emerald-900 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-emerald-900 border border-gray-300 text-white font-bold py-2 px-4 rounded-full"
               >
                 Pregled svih izvestaja sa pecanja
               </a>
@@ -53,7 +53,7 @@ const FishTrackNavbar = (props) => {
 
             <li>
               <button
-                className="bg-emerald-900 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-emerald-900 border border-gray-300 text-white font-bold py-2 px-4 rounded-full"
                 onClick={(e) => logout(e)}
               >
                 Odjava
@@ -73,7 +73,7 @@ const FishTrackNavbar = (props) => {
           <li>
             <a
               href="/input"
-              className="bg-emerald-900 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-emerald-900 border border-gray-300 text-white font-bold py-2 px-4 rounded-full"
             >
               Dodaj izvestaj sa pecanja
             </a>
@@ -82,7 +82,7 @@ const FishTrackNavbar = (props) => {
           <li>
             <a
               href="/reports"
-              className="bg-emerald-900 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-emerald-900 border border-gray-300 text-white font-bold py-2 px-4 rounded-full"
             >
               Pregled svih izvestaja sa pecanja
             </a>
@@ -90,7 +90,7 @@ const FishTrackNavbar = (props) => {
 
           <li>
             <button
-              className="bg-emerald-900 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-emerald-900 border border-gray-300 text-white font-bold py-2 px-4 rounded-full"
               onClick={(e) => logout(e)}
             >
               Odjava

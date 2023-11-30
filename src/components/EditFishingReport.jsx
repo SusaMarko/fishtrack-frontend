@@ -63,7 +63,7 @@ const EditFishingReport = () => {
         </h1>
 
         <div className="pt-10 flex flex-wrap justify-center items-center flex-col">
-          <span className="mr-2">Datum i vreme izlaska na vodu:</span>
+          <span className="mr-2 text-white">Datum i vreme izlaska na vodu</span>
 
           <DatePicker
             placeholder={location.state.fishingReport.created_at}
@@ -77,7 +77,7 @@ const EditFishingReport = () => {
 
           <br />
 
-          <span className="mr-2">Mesto pecanja:</span>
+          <span className="mr-2 text-white">Mesto pecanja</span>
           <input
             type="text"
             placeholder={location.state.fishingReport.spot}
@@ -87,7 +87,7 @@ const EditFishingReport = () => {
 
           <br />
 
-          <span className="mr-2">Nivo vode tog dana:</span>
+          <span className="mr-2 text-white">Nivo vode tog dana</span>
           <input
             type="text"
             placeholder={location.state.fishingReport.water_level}
@@ -97,7 +97,9 @@ const EditFishingReport = () => {
 
           <br />
 
-          <span className="mr-2">Vreme (suncano, oblacno, itd.):</span>
+          <span className="mr-2 text-white">
+            Vreme (suncano, oblacno, itd.)
+          </span>
           <input
             type="text"
             placeholder={location.state.fishingReport.weather}
@@ -107,7 +109,9 @@ const EditFishingReport = () => {
 
           <br />
 
-          <span className="mr-2">Vrsta pecanja (fider, plovak, itd.):</span>
+          <span className="mr-2 text-white">
+            Vrsta pecanja (fider, plovak, itd.)
+          </span>
           <input
             type="text"
             placeholder={location.state.fishingReport.type_of_fishing}
@@ -117,7 +121,7 @@ const EditFishingReport = () => {
 
           <br />
 
-          <span className="mr-2">Mamac:</span>
+          <span className="mr-2 text-white">Mamac</span>
           <input
             type="text"
             placeholder={location.state.fishingReport.bait}
@@ -127,7 +131,7 @@ const EditFishingReport = () => {
 
           <br />
 
-          <span className="mr-2">Hrana za primamu:</span>
+          <span className="mr-2 text-white">Hrana za primamu</span>
           <input
             type="text"
             placeholder={location.state.fishingReport.food}
@@ -137,7 +141,7 @@ const EditFishingReport = () => {
 
           <br />
 
-          <span className="mr-2">Ulov:</span>
+          <span className="mr-2 text-white">Ulov</span>
           <input
             type="text"
             placeholder={location.state.fishingReport.the_catch}
