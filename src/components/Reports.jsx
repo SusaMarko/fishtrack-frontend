@@ -3,6 +3,7 @@ import FishTrackNavbar from "./FishTrackNavbar";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import Comments from "./Comments";
+import dateToTime from "../util/dateToTime"
 
 const Reports = (props) => {
   const [fishingReports, setFishingReports] = useState([]);
@@ -65,14 +66,12 @@ const Reports = (props) => {
     }
   };
 
-  const dateToTime = (date) =>
-    date.toLocaleString("en-GB", {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-    });
+  const arrayBufferToBase64 = (buffer) => {
+    let binary = '';
+    const bytes = [].slice.call(new Uint8Array(buffer));
+    bytes.forEach((b) => binary += String.fromCharCode(b));
+    return window.btoa(binary);
+  };
 
   return (
     <>
@@ -103,9 +102,12 @@ const Reports = (props) => {
               key={fishingReport.id}
             >
               <div className="bg-emerald-900 text-white mt-2 rounded-md p-2 focus:outline-none">
+                  <img src={'data:image/png;base64,' + arrayBufferToBase64(fishingReport.image?.data)} alt='Slika nije dodata' />
+              </div>
+              <div className="bg-emerald-900 text-white mt-2 rounded-md p-2 focus:outline-none">
                 <span className="font-bold">Datum:</span>
                 <span className="ml-2">
-                  {dateToTime(new Date(fishingReport.created_at))}
+                  {dateToTime(fishingReport.created_at)}
                 </span>
               </div>
               <div className="bg-emerald-900 text-white mt-2 rounded-md p-2 focus:outline-none">

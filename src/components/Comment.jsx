@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import jwt_decode from "jwt-decode";
 import EditComment from "./EditComment";
+import dateToTime from "../util/dateToTime"
 
 const Comment = (props) => {
   const [showEditComment, setShowEditComment] = useState(false);
@@ -49,12 +50,12 @@ const Comment = (props) => {
     <>
       <div className="bg-emerald-900 mb-4">
         <li
-          key={props.comment.fishingReportId}
+          key={props.comment.id}
           className="border border-gray-300 rounded-md p-2 focus:outline-none"
         >
           <p className="bg-emerald-950 text-white rounded-md p-2 focus:outline-none mb-2">
             <span style={{ fontWeight: "bold" }}>Datum:</span>{" "}
-            {props.comment.created_at}
+            {dateToTime(props.comment.created_at)}
           </p>
 
           <p className="bg-emerald-950 text-white rounded-md p-2 focus:outline-none mb-2">
@@ -63,7 +64,7 @@ const Comment = (props) => {
           </p>
 
           <p className="bg-emerald-950 text-white rounded-md p-2 focus:outline-none">
-            <span style={{ fontWeight: "bold" }}>Lajkovi:</span> {likes}
+            <span style={{ fontWeight: "bold" }}>Lajkovi:</span> {likes ?? 0}
           </p>
 
           {localStorage.getItem(props.comment.id) !== "liked" && (

@@ -7,7 +7,7 @@ const EditFishingReport = () => {
   const location = useLocation();
 
   const [createdAt, setCreatedAt] = useState(
-    location.state.fishingReport.createdAt
+    new Date(location.state.fishingReport.created_at)
   );
   const [spot, setSpot] = useState(location.state.fishingReport.spot);
   const [waterLevel, setWaterLevel] = useState(
@@ -66,7 +66,7 @@ const EditFishingReport = () => {
           <span className="mr-2 text-white">Datum i vreme izlaska na vodu</span>
 
           <DatePicker
-            placeholder={location.state.fishingReport.created_at}
+            placeholder=""
             wrapperClassName="w-full"
             className="w-full p-4 bg-emerald-900 rounded-md placeholder-white text-white"
             selected={createdAt}
