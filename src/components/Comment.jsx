@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import jwt_decode from "jwt-decode";
 import EditComment from "./EditComment";
-import dateToTime from "../util/dateToTime"
+import dateToTime from "../util/dateToTime";
 
 const Comment = (props) => {
   const [showEditComment, setShowEditComment] = useState(false);
@@ -59,7 +59,7 @@ const Comment = (props) => {
           </p>
 
           <p className="bg-emerald-950 text-white rounded-md p-2 focus:outline-none mb-2">
-            <span style={{ fontWeight: "bold" }}>Text:</span>{" "}
+            <span style={{ fontWeight: "bold" }}>Tekst:</span>{" "}
             {props.comment.comment_text}
           </p>
 
