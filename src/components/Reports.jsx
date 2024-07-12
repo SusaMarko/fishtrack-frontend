@@ -3,7 +3,7 @@ import FishTrackNavbar from "./FishTrackNavbar";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import Comments from "./Comments";
-import dateToTime from "../util/dateToTime"
+import dateToTime from "../util/dateToTime";
 
 const Reports = (props) => {
   const [fishingReports, setFishingReports] = useState([]);
@@ -67,9 +67,9 @@ const Reports = (props) => {
   };
 
   const arrayBufferToBase64 = (buffer) => {
-    let binary = '';
+    let binary = "";
     const bytes = [].slice.call(new Uint8Array(buffer));
-    bytes.forEach((b) => binary += String.fromCharCode(b));
+    bytes.forEach((b) => (binary += String.fromCharCode(b)));
     return window.btoa(binary);
   };
 
@@ -102,7 +102,17 @@ const Reports = (props) => {
               key={fishingReport.id}
             >
               <div className="bg-emerald-900 text-white mt-2 rounded-md p-2 focus:outline-none">
-                  <img src={'data:image/png;base64,' + arrayBufferToBase64(fishingReport.image?.data)} alt='Slika nije dodata' />
+                <img
+                  src={
+                    "data:image/png;base64," +
+                    arrayBufferToBase64(fishingReport.image?.data)
+                  }
+                  alt="Slika nije dodata"
+                />
+              </div>
+              <div className="bg-emerald-900 text-white mt-2 rounded-md p-2 focus:outline-none">
+                <span className="font-bold">Pecaros:</span>
+                <span className="ml-2">{fishingReport.user_name}</span>
               </div>
               <div className="bg-emerald-900 text-white mt-2 rounded-md p-2 focus:outline-none">
                 <span className="font-bold">Datum:</span>
@@ -114,7 +124,6 @@ const Reports = (props) => {
                 <span className="font-bold">Mesto pecanja:</span>
                 <span className="ml-2">{fishingReport.spot}</span>
               </div>
-
               <div className="bg-emerald-900 text-white mt-2 rounded-md p-2 focus:outline-none">
                 <span className="font-bold">Nivo vode:</span>
                 <span className="ml-2">{fishingReport.water_level}</span>
