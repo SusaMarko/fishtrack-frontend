@@ -7,6 +7,6 @@ const dateToTime = (createdAt) => {
     hour: "numeric",
     minute: "numeric",
   });
-}
+};
 
 export default dateToTime;

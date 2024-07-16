@@ -54,6 +54,10 @@ const Comment = (props) => {
           className="border border-gray-300 rounded-md p-2 focus:outline-none"
         >
           <p className="bg-emerald-950 text-white rounded-md p-2 focus:outline-none mb-2">
+            <span style={{ fontWeight: "bold" }}>Komentarisao:</span>{" "}
+            {props.comment.user_name}
+          </p>
+          <p className="bg-emerald-950 text-white rounded-md p-2 focus:outline-none mb-2">
             <span style={{ fontWeight: "bold" }}>Datum:</span>{" "}
             {dateToTime(props.comment.created_at)}
           </p>
