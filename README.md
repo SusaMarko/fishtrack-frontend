@@ -3,6 +3,8 @@
 FishTrack frontend is a React PWA that uses [FishTrack backend](https://github.com/SusaMarko/fishtrack-backend) in order to
 provide user the option of taking a picture of a fishing spot and manipulating fishing reports and commenting.
 
+![alt text](https://github.com/SusaMarko/fishtrack-frontend/blob/main/public/reports.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
